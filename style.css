@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-color: #d8e2dc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 650px;
+    height: 779px;
+    border: 5px solid #000814;
+    border-radius: 15px;
+    position: relative;
+}
+
+.header{
+    color: #fff;
+    min-height: 30%;
+    background:linear-gradient(to right, rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(img/backImage.png);
+    background-size:cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header h1{
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 24px;
+}
+
+header p{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+i{
+    position: absolute;
+}
+
+#display{
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: auto auto auto;
+}
+
+.search-bar{
+    position: absolute;
+    top: 25.5%;
+}
+
+.search-container{
+    width: 100%;
+    margin-top: 10px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px 0;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+i{
+    color: #000;
+    position: relative;
+    left: 12%;
+    padding-right: 40px;
+}
+
+.search-box{
+    border: 1px solid #DDD;
+    padding-left: 45px;
+    color: #0e0d0d;
+    width: 462px;
+    height: 38px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 6px 0 0 6px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    outline: none;
+}
+
+.search-btn{
+    padding: 10px 38px 11px 34px;
+    /* background-color: #fff; */
+    border: 1px solid #D1D5DB;
+    border-radius: 0px 6px 6px 0px;
+    position: relative;
+    right: 10%;
+    background-color: #F9FAFB;
+    color: #374151;
+}
+
+img{
+    width: 100px;
+    height: auto;
+}
+
+.movie-item{
+    margin: 20px 50px;
+    display: flex;
+    gap: 20px;
+    /* align-items: center; */
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    /* -webkit-box-direction: normal; */
+    flex-direction: row;
+    /* position: absolute; */
+}
+
