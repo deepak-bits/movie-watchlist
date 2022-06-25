@@ -1,0 +1,5 @@
+-- responsive design
+
+-- local Storage
+
+-- scroll feature to add remaining movies - right now only showing 2

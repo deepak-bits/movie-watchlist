@@ -28,7 +28,7 @@ body{
 .header{
     color: #fff;
     min-height: 30%;
-    background:linear-gradient(to right, rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(img/backImage.png);
+    background:linear-gradient(to right, rgba(0, 0, 0, 0.78),rgba(0, 0, 0, 0.78)), url(img/backImage.png);
     background-size:cover;
     display: flex;
     justify-content: space-around;
@@ -47,19 +47,18 @@ header p{
     line-height: 20px;
 }
 
-i{
-    position: absolute;
-}
-
 #display{
     display: flex;
     flex-direction: column;
     grid-template-columns: auto auto auto;
+    margin: 25px 44px 0 44px;
+    /* margin-left: 44px;   */
 }
 
 .search-bar{
     position: absolute;
     top: 25.5%;
+    margin-bottom: 20px;
 }
 
 .search-container{
@@ -74,7 +73,7 @@ i{
     margin-right: auto;
 }
 
-i{
+.fa-search{
     color: #000;
     position: relative;
     left: 12%;
@@ -105,24 +104,73 @@ i{
     color: #374151;
 }
 
+.movie-item{
+    margin: 20px 0;
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 20px;
+}
+
 img{
     width: 100px;
     height: auto;
 }
 
-.movie-item{
-    margin: 20px 50px;
+.info--first{
     display: flex;
-    gap: 20px;
-    /* align-items: center; */
+    margin-top: 15px;
+    /* justify-content: spa; */
 }
 
-.info{
+.info--first > small{
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 200;
+    /* text-align: justify; */
+}
+
+.info--first > span{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #111827;
+    margin-left: 5px;
+}
+
+.fa-star{
+    color: #FEC654;
+    margin-left: 25px;
+}
+
+.info--second{
+    width: 400px;
     display: flex;
     justify-content: space-between;
-    -webkit-box-orient: horizontal;
-    /* -webkit-box-direction: normal; */
-    flex-direction: row;
-    /* position: absolute; */
+    margin-top: 11px;
+    margin-bottom: 8px;
+    /* font-size: 12px; */
+}
+
+.info--second i{
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    margin-right: 3px;
+}
+
+
+/* hr{
+    width: 90%;
+    margin-left: 30px;
+} */
+
+.info--third{
+    /* width: 342px; */
+    height: 60px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #6B7280;
 }
 
