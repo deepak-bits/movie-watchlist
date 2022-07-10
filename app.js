@@ -13,7 +13,7 @@ searchBtn.addEventListener('click', (e) => {
     // console.log(searchTerm);
 
     // Create URL
-    const url = `http://www.omdbapi.com/?apikey=${API_Key}&s=${searchTerm}`;
+    const url = `https://www.omdbapi.com/?apikey=${API_Key}&s=${searchTerm}`;
 
     // send API request to OMDB api using the above search term
     fetch(url) // Returns promise
@@ -29,7 +29,7 @@ searchBtn.addEventListener('click', (e) => {
                 // Plot, genre, remaining info
                 // get using imdbID
                 // make another request to OMDB API
-                const movieUrl = `http://www.omdbapi.com/?apikey=${API_Key}&i=${imdbID}`;
+                const movieUrl = `https://www.omdbapi.com/?apikey=${API_Key}&i=${imdbID}`;
 
                 fetch(movieUrl)
                     .then(res => res.json())
