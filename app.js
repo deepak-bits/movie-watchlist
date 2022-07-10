@@ -6,6 +6,7 @@ const searchEl = document.getElementById('movie');
 const searchBtn = document.querySelector('.search-btn');
 const displayEl = document.getElementById('display');
 
+
 // Add event listener on search button
 searchBtn.addEventListener('click', (e) => {
     const searchTerm = searchEl.value;
@@ -16,28 +17,25 @@ searchBtn.addEventListener('click', (e) => {
 
     // send API request to OMDB api using the above search term
     fetch(url) // Returns promise
-        .then(function(response) {
-            return response.json() // Returning a second promise
-        })
+        .then(res => res.json())
         .then(data => { // Resolving using .then methond again
             console.log(data);
-
             const moviesData = data.Search;
+            displayEl.innerHTML = '';
 
-            for(let i = 0; i < 2; i++){
+            for(let i = 0; i < 3; i++){
                 const { imdbID } = moviesData[i];
 
                 // Plot, genre, remaining info
                 // get using imdbID
                 // make another request to OMDB API
                 const movieUrl = `http://www.omdbapi.com/?apikey=${API_Key}&i=${imdbID}`;
-                displayEl.innerHTML = '';
 
                 fetch(movieUrl)
                     .then(res => res.json())
                     .then(data => {
                         // console.log(data)
-                        const {Poster, Title, imdbRating, Runtime, Genre, Plot } = data;
+                        const { Poster, Title, imdbRating, Runtime, Genre, Plot } = data;
 
                         displayEl.innerHTML += `
                             <div class="movie-item">
@@ -51,20 +49,33 @@ searchBtn.addEventListener('click', (e) => {
                                     <div class="info--second">
                                         <small>${Runtime}</small>
                                         <small>${Genre}</small>
-                                        <span><i class="fa fa-plus"></i>Watchlist</span>
+                                        <span>
+                                            <i class="fa fa-plus" onclick=addMoviesToLocalStorage('${imdbID.trim()}')></i>Watchlist
+                                        </span>
                                     </div>
                                     <p class="info--third">${Plot}</p>
                                 </div>
                             </div>
                             <hr/>
-                        `
+                        `;
                     })
-
             }
         })
 })
 
 
+function addMoviesToLocalStorage(id){
+    console.log('Watchlist added');
+    let movieIDs;
+    if(localStorage.getItem('movieIDs') === null){
+        movieIDs = [];
+    } else{
+        movieIDs = JSON.parse(localStorage.getItem('movieIDs'));
+    }
+    movieIDs.push(id);
+
+    localStorage.setItem('movieIDs', JSON.stringify(movieIDs));
+}
 
 
 

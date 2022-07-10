@@ -19,7 +19,9 @@ body{
 
 .container{
     width: 650px;
-    height: 779px;
+    background-color: #fff;
+    /* height: 779px; */
+    height: 865px;
     border: 5px solid #000814;
     border-radius: 15px;
     position: relative;
